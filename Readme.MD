@@ -1,3 +1,5 @@
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+
 your-theme/
 ├── assets/
 │   ├── css/                 → Output of compiled SCSS (e.g., style.min.css)
