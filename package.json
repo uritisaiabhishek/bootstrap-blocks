@@ -1,12 +1,65 @@
 {
   "name": "wp-bootstrap",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "wordpress",
+    "bootstrap",
+    "gulp",
+    "theme",
+    "block",
+    "development",
+    "sass",
+    "css",
+    "js",
+    "html",
+    "gulpfile",
+    "gulp-sass",
+    "gulp-clean-css",
+    "gulp-concat",
+    "gulp-rename",
+    "gulp-sourcemaps",
+    "gulp-terser",
+    "browser-sync",
+    "gulp-clean",
+    "bootstrap",
+    "swiper",
+    "popperjs",
+    "gulp-uglify",
+    "gulp-uglify-es",
+    "gulp-uglifyjs",
+    "gulp-uglifycss",
+    "gulp-uglifyjs",
+    "gulp-uglifycss",
+    "gulp-uglify-es",
+    "gulp-uglify-es",
+    "gulp-uglify-es",
+    "gulp-uglify-es",
+    "gulp-uglify-es"
+  ],
+  "author": "Uriti Sai Abhishek",
   "license": "ISC",
-  "description": ""
+  "description": "WordPress Block Theme with Bootstrap and Gulp Setup",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp", 
+    "build": "gulp build",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.86.3"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.5",
+    "swiper": "^11.2.6"
+  }
 }

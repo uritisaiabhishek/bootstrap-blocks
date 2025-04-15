@@ -1,0 +1,23 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}, "className":"container py-5"} -->
+<main class="wp-block-group container py-5">
+    <h1>Search Results</h1>
+    <!-- wp:query-title /-->
+  
+    <!-- wp:query {"query":{"postType":"post"},"layout":{"type":"default"}} -->
+    <div class="wp-block-query">
+      <!-- wp:post-template -->
+        <div class="mb-4">
+          <!-- wp:post-title {"isLink":true,"level":3} /-->
+          <!-- wp:post-excerpt /-->
+        </div>
+      <!-- /wp:post-template -->
+      <!-- wp:query-pagination /-->
+    </div>
+    <!-- /wp:query -->
+  
+  </main>
+  <!-- /wp:group -->
+  
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->  

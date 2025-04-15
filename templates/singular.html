@@ -1,0 +1,14 @@
+<!-- wp:template-part {"slug":"header","theme":"wp-bootstrap","tagName":"header"} /-->
+
+<!-- wp:query {"query":{"perPage":6,"postType":"post","category":"uncategorized","tag":"special-tag","orderby":"date","order":"desc","metaKey":"_custom_field_key","metaValue":"custom_value"},"layout":{"type":"default"}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template -->
+        <div class="card">
+            <!-- wp:post-title {"isLink":true} /-->
+            <!-- wp:post-excerpt /-->
+        </div>
+    <!-- /wp:post-template -->
+    </div>
+<!-- /wp:query -->
+
+<!-- wp:template-part {"slug":"footer","theme":"wp-bootstrap","tagName":"footer"} /-->

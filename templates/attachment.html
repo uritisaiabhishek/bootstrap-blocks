@@ -1,0 +1,38 @@
+<!-- wp:group {"className":"attachment-page"} -->
+<div class="wp-block-group attachment-page">
+  
+  <!-- Post Title (Attachment Title) -->
+  <h1 class="attachment-title">
+    <!-- wp:post-title /-->
+  </h1>
+  
+  <!-- Post Featured Image (Attachment Image) -->
+  <div class="attachment-image">
+    <!-- wp:post-featured-image {"align":"wide"} /-->
+  </div>
+
+  <!-- Attachment Caption and Description -->
+  <div class="attachment-description">
+    <!-- wp:post-content /-->
+  </div>
+
+  <!-- Attachment Metadata (Date, Author, File Type, etc.) -->
+  <div class="attachment-meta">
+    <span class="attachment-date">Uploaded on: <!-- wp:post-date /--></span>
+    <span class="attachment-author">By: <!-- wp:post-author-name /--></span>
+    <!-- Custom metadata like file type or size could be added here -->
+  </div>
+
+  <!-- Link to View Full Size (for images) -->
+  <div class="view-full-size">
+    <a href="<!-- wp:post-permalink /-->">View Full Size</a>
+  </div>
+
+  <!-- Optional: Attachment Navigation (Next/Previous Attachments) -->
+  <div class="attachment-navigation">
+    <!-- wp:post-navigation-link {"type":"previous"} /-->
+    <!-- wp:post-navigation-link {"type":"next"} /-->
+  </div>
+
+</div>
+<!-- /wp:group -->

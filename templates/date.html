@@ -1,0 +1,28 @@
+<!-- wp:group {"className":"date-archive"} -->
+<div class="wp-block-group date-archive">
+
+    <!-- Archive Title (e.g., Month, Day, Year) -->
+    <h1 class="archive-title">
+      <!-- wp:date-archive-title /-->
+    </h1>
+  
+    <!-- Archive Description (optional) -->
+    <div class="archive-description">
+      <!-- wp:date-archive-description /-->
+    </div>
+  
+    <!-- Date-Based Posts Loop -->
+    <div class="date-posts">
+      <!-- wp:loop -->
+        <!-- wp:template-part {"slug":"loop-item"} /-->
+      <!-- /wp:loop -->
+    </div>
+  
+    <!-- Pagination for Date-Based Posts -->
+    <div class="date-pagination">
+      <!-- wp:post-pagination /-->
+    </div>
+  
+  </div>
+  <!-- /wp:group -->
+  

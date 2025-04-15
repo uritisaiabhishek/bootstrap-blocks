@@ -1,0 +1,25 @@
+<!-- wp:query 
+    {
+        "query":{
+            "perPage":3,
+            "postType":"post",
+            "category":"uncategorized",
+            "tag":"special-tag",
+            "orderby":"date",
+            "order":"desc",
+            "metaKey":"_custom_field_key",
+            "metaValue":"custom_value"
+        },
+        "layout":{"type":"default"}
+    }
+-->
+
+<div class="wp-block-query">
+    <!-- wp:post-template -->
+        <div class="card">
+            <!-- wp:post-title {"isLink":true} /-->
+            <!-- wp:post-excerpt /-->
+        </div>
+    <!-- /wp:post-template -->
+</div>
+<!-- /wp:query -->

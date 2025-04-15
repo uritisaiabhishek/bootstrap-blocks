@@ -1,0 +1,65 @@
+<!-- wp:template-part {"slug":"header", "theme":"wp-bootstrap", "tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}, "className":"container my-5"} -->
+<main class="wp-block-group container my-5">
+
+    <!-- wp:query-title {"type":"archive"} /-->
+    <!-- wp:term-description /-->
+  
+    <!-- wp:query {"queryId":1,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date"},"layout":{"type":"default"}} -->
+    <div class="wp-block-query">
+  
+      <!-- wp:group {"className":"row g-4"} -->
+      <div class="wp-block-group row g-4">
+  
+        <!-- wp:post-template -->
+          <!-- wp:group {"className":"col-md-4"} -->
+          <div class="wp-block-group col-md-4">
+  
+            <!-- wp:group {"className":"card h-100 shadow-sm"} -->
+            <div class="wp-block-group card h-100 shadow-sm">
+  
+              <!-- wp:post-featured-image {"isLink":true,"className":"card-img-top"} /-->
+  
+              <!-- wp:group {"className":"card-body"} -->
+              <div class="wp-block-group card-body">
+                <!-- wp:post-title {"isLink":true,"level":4,"className":"card-title"} /-->
+                <!-- wp:post-excerpt {"className":"card-text"} /-->
+              </div>
+              <!-- /wp:group -->
+  
+              <!-- wp:group {"className":"card-footer text-muted small"} -->
+              <div class="wp-block-group card-footer text-muted small">
+                <!-- wp:post-date /-->
+                <!-- wp:post-terms {"term":"category"} /-->
+              </div>
+              <!-- /wp:group -->
+  
+            </div>
+            <!-- /wp:group -->
+  
+          </div>
+          <!-- /wp:group -->
+        <!-- /wp:post-template -->
+  
+      </div>
+      <!-- /wp:group -->
+  
+      <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}, "className":"mt-5"} -->
+        <!-- wp:query-pagination-previous /-->
+        <!-- wp:query-pagination-numbers /-->
+        <!-- wp:query-pagination-next /-->
+      <!-- /wp:query-pagination -->
+  
+    </div>
+    <!-- /wp:query -->
+  
+
+    <!-- wp:loop -->
+      <!-- wp:template-part {"slug":"loop-item"} /-->
+    <!-- /wp:loop -->
+
+  </main>
+  <!-- /wp:group -->
+    
+<!-- wp:template-part {"slug":"footer","theme":"wp-bootstrap","tagName":"footer"} /-->  
