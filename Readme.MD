@@ -11,3 +11,4 @@ your-theme/
 ├── functions.php            → Enqueue styles/scripts (if needed)
 ├── gulpfile.js              → Your Gulp config
 └── package.json             → Node modules config
+# wp-bootstrap
