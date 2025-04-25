@@ -19,3 +19,14 @@ function your_theme_enqueue_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'your_theme_enqueue_assets');
+
+function mytheme_register_blocks() {
+    $blocks = [
+        'blocks/accordion'
+    ];
+
+    foreach ( $blocks as $block ) {
+        register_block_type( get_template_directory() . '/' . $block );
+    }
+}
+add_action( 'init', 'mytheme_register_blocks' );

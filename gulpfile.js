@@ -4,10 +4,8 @@ const cleanCSS = require("gulp-clean-css");
 const terser = require("gulp-terser");
 const rename = require("gulp-rename");
 const sourcemaps = require("gulp-sourcemaps");
-const browserSync = require("browser-sync").create();
 const concat = require("gulp-concat");
 const clean = require("gulp-clean");
-const path = require("path");
 
 // Theme Paths
 const paths = {
@@ -16,30 +14,19 @@ const paths = {
 	js: "./assets/js/**/*.js",
 	cssDest: "./assets/css",
 	jsDest: "./assets/js",
-	templates: "./templates/**/*.html",
-	parts: "./parts/**/*.html",
-	php: "./**/*.php",
-	images: "./assets/images/**/*",
 };
 
-// Clean old compiled CSS/JS (optional)
+// Clean old compiled CSS/JS files
 function cleanBuild() {
 	return gulp
-		.src(
-			[
-				`${paths.cssDest}/*.css`,
-				`${paths.jsDest}/*.js`,
-				`!${paths.jsDest}/*.min.js`,
-			],
-			{
-				read: false,
-				allowEmpty: true,
-			}
-		)
+		.src([`${paths.cssDest}/*.css`, `${paths.jsDest}/custom.min.js`], {
+			read: false,
+			allowEmpty: true,
+		})
 		.pipe(clean());
 }
 
-// Compile SCSS
+// Compile SCSS to minified CSS with sourcemaps
 function styles() {
 	return gulp
 		.src("./assets/scss/style.scss")
@@ -47,30 +34,37 @@ function styles() {
 		.pipe(sass().on("error", sass.logError))
 		.pipe(cleanCSS())
 		.pipe(rename({ suffix: ".min" }))
-		.pipe(sourcemaps.write("./maps"))
-		.pipe(gulp.dest(paths.cssDest))
-		.pipe(browserSync.stream());
+		.pipe(sourcemaps.write("./"))
+		.pipe(gulp.dest(paths.cssDest));
 }
 
-// Compile & bundle JS
+// Compile & bundle JS to custom.min.js with sourcemaps
 function scripts() {
 	return gulp
 		.src([
-			"./node_modules/@popperjs/core/dist/umd/popper.min.js",
+			"./assets/js/custom.js",
 			"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+			"./node_modules/@popperjs/core/dist/umd/popper.min.js",
 			"./node_modules/swiper/swiper-bundle.min.js",
-			"./assets/js/custom.js", // your custom JS file
 		])
 		.pipe(sourcemaps.init())
-		.pipe(concat("main.js"))
+		.pipe(concat("custom.js"))
 		.pipe(terser())
-		.pipe(sourcemaps.write("./maps"))
-		.pipe(gulp.dest(paths.jsDest))
-		.pipe(browserSync.stream());
+		.pipe(rename({ suffix: ".min" }))
+		.pipe(sourcemaps.write("./"))
+		.pipe(gulp.dest(paths.jsDest));
 }
 
-// Define Gulp tasks
+// Watch SCSS and JS files for changes
+function watchFiles() {
+	gulp.watch(paths.scss, styles);
+	gulp.watch(paths.js, scripts);
+}
+
+// Define gulp tasks
 exports.clean = cleanBuild;
 exports.styles = styles;
 exports.scripts = scripts;
+exports.watch = watchFiles;
 exports.build = gulp.series(cleanBuild, styles, scripts);
+exports.default = gulp.series(cleanBuild, styles, scripts, watchFiles);
